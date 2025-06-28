@@ -1,0 +1,14 @@
+[
+  {
+    "NomeCompleto": "Victor",
+    "Treinadores": [
+      {
+        "Nome": "Paes",
+        "Gênero": 1,
+        "Nivel": 1,
+        "Experiencia": 0,
+        "MonstrosCapturados": []
+      }
+    ]
+  }
+]

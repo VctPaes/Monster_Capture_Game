@@ -1,0 +1,12 @@
+C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.json\bin\Debug\net9.0\ProjetoFinal.json.deps.json
+C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.json\bin\Debug\net9.0\ProjetoFinal.json.dll
+C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.json\bin\Debug\net9.0\ProjetoFinal.json.pdb
+C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.json\obj\Debug\net9.0\ProjetoFinal.json.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.json\obj\Debug\net9.0\ProjetoFinal.json.AssemblyInfoInputs.cache
+C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.json\obj\Debug\net9.0\ProjetoFinal.json.AssemblyInfo.cs
+C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.json\obj\Debug\net9.0\ProjetoFinal.json.csproj.CoreCompileInputs.cache
+C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.json\obj\Debug\net9.0\ProjetoFinal.json.sourcelink.json
+C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.json\obj\Debug\net9.0\ProjetoFinal.json.dll
+C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.json\obj\Debug\net9.0\refint\ProjetoFinal.json.dll
+C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.json\obj\Debug\net9.0\ProjetoFinal.json.pdb
+C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.json\obj\Debug\net9.0\ref\ProjetoFinal.json.dll
