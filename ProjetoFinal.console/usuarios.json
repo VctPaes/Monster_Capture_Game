@@ -24,15 +24,8 @@
         "MonstrosCapturados": []
       },
       {
-        "Nome": "bda",
+        "Nome": "abc",
         "Gênero": 2,
-        "Nivel": 1,
-        "Experiencia": 0,
-        "MonstrosCapturados": []
-      },
-      {
-        "Nome": "asdasd",
-        "Gênero": 1,
         "Nivel": 1,
         "Experiencia": 0,
         "MonstrosCapturados": []
@@ -61,19 +54,17 @@
         "MonstrosCapturados": []
       },
       {
-        "Nome": "bda",
+        "Nome": "abc",
         "Gênero": 2,
-        "Nivel": 1,
-        "Experiencia": 0,
-        "MonstrosCapturados": []
-      },
-      {
-        "Nome": "asdasd",
-        "Gênero": 1,
         "Nivel": 1,
         "Experiencia": 0,
         "MonstrosCapturados": []
       }
     ]
+  },
+  {
+    "NomeCompleto": "Laura",
+    "Treinadores": [],
+    "TreinadoresReadOnly": []
   }
 ]

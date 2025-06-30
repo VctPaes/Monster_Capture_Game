@@ -26,13 +26,14 @@ while (true)
             NovoTreinador(usuario, usuarios, SalvarUsuarios);
             break;
         case "2":
-            // Lógica para ver treinadores
+            ExibirTreinadores(usuario, usuarios);
             break;
         case "3":
-            Console.WriteLine("Saindo...");
+            SalvarUsuarios(usuarios);
+            Console.WriteLine("\nSaindo...");
             return;
         default:
-            Console.WriteLine("Opção inválida. Tente novamente.");
+            Console.WriteLine("\nOpção inválida. Tente novamente.");
             break;
     }
 }
@@ -107,12 +108,57 @@ static void NovoTreinador(Usuario usuario, List<Usuario> usuarios, Action<List<U
         return;
     }
     int genero = generoTreinador == "M" ? 1 : 2;
-    Treinador treinador = new(nomeTreinador, genero);
-    usuario.AdicionarTreinador(treinador);
+    try
+    {
+        Treinador treinador = new(nomeTreinador, genero);
+        usuario.AdicionarTreinador(treinador);
 
-    string artigoTipo1 = generoTreinador == "M" ? "" : "a"; // O artigo masculino permanece vazio
-    string artigoTipo2 = generoTreinador == "M" ? "o" : "a"; // Adiciona artigo "o" para masculino
-    Console.WriteLine($"Treinador{artigoTipo1} {treinador.Nome} criad{artigoTipo2} com sucesso!");
+        string artigoTipo1 = generoTreinador == "M" ? "" : "a"; // O artigo masculino permanece vazio
+        string artigoTipo2 = generoTreinador == "M" ? "o" : "a"; // Adiciona artigo "o" para masculino
+        Console.WriteLine($"Treinador{artigoTipo1} {treinador.Nome} criad{artigoTipo2} com sucesso!");
 
-    salvar(usuarios);
+        salvar(usuarios);
+        ExibirTreinadores(usuario, usuarios);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Erro ao criar treinador: {ex.Message}");
+    }
+}
+
+static void ExibirTreinadores(Usuario usuario, List<Usuario> usuarios)
+{
+    if (usuario.Treinadores.Count == 0)
+    {
+        Console.WriteLine("\nVocê ainda não possui treinadores.");
+        Console.WriteLine("\nDeseja criar um novo treinador para começar sua jornada? (S/N)");
+
+        string resposta;
+        do
+        {
+            resposta = Normalizar(Console.ReadLine() ?? "");
+            if (resposta != "s" && resposta != "n")
+            {
+                Console.WriteLine("Insira uma resposta válida (S/N).");
+            }
+        } while (resposta != "s" && resposta != "n");
+
+        if (resposta == "s")
+        {
+            NovoTreinador(usuario, usuarios, SalvarUsuarios);
+        }
+        else
+        {
+            Console.WriteLine("Voltando ao menu principal...");
+            return;
+        }
+        }
+    else
+    {
+        Console.WriteLine("Seus treinadores: ");
+    }
+    foreach (var treinador in usuario.Treinadores)
+    {
+        Console.WriteLine($"\n{treinador.Nome} | (Nível {treinador.Nivel})");
+    }
 }
