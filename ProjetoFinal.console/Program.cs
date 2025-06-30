@@ -16,7 +16,9 @@ while (true)
     Console.WriteLine("\nMenu:\n");
     Console.WriteLine("1. Novo Treinador");
     Console.WriteLine("2. Escolher Treinador");
-    Console.WriteLine("\n0. Sair");
+    Console.WriteLine("---------------------");
+    Console.WriteLine("3. Gerenciar Usuário");
+    Console.WriteLine("0. Sair");
 
     string opcao = LerEntrada("\nEscolha uma opção: ");
 
@@ -35,6 +37,10 @@ while (true)
                 do
                 {
                     resposta = Normalizar(Console.ReadLine() ?? "");
+                    if (resposta != "s" && resposta != "n")
+                    {
+                        Console.WriteLine("Resposta inválida. Digite 'S' para sim ou 'N' para não.");
+                    }
                 } while (resposta != "s" && resposta != "n");
 
                 if (resposta == "s")
@@ -46,6 +52,9 @@ while (true)
                     Console.WriteLine("Voltando ao menu principal...");;
                 }
             }
+            break;
+        case "3":
+            GerenciarUsuario(usuario, usuarios, SalvarUsuarios);
             break;
         case "0":
             SalvarUsuarios(usuarios);
@@ -202,5 +211,53 @@ static void ExcluirTreinador(Usuario usuario, List<Usuario> usuarios, Action<Lis
     else
     {
         Console.WriteLine("\nTreinador não encontrado.");
+    }
+}
+
+static void GerenciarUsuario(Usuario usuario, List<Usuario> usuarios, Action<List<Usuario>> salvar)
+{
+    while (true)
+    {
+        Console.WriteLine($"\nUsuário atual: {usuario.NomeCompleto}");
+        Console.WriteLine("1. Alterar Nome de Usuário");
+        Console.WriteLine("2. Excluir Usuário");
+        Console.WriteLine("---------------------");
+        Console.WriteLine("0. Voltar");
+
+        string opcao = LerEntrada("\nEscolha uma opção: ");
+
+        switch (opcao)
+        {
+            case "1":
+                string novoNome = LerEntrada("Digite o novo nome de usuário: ");
+                usuario.NomeCompleto = novoNome;
+                salvar(usuarios);
+                Console.WriteLine("\nNome de usuário alterado com sucesso!");
+                break;
+            case "2":
+                Console.WriteLine("Tem certeza que deseja excluir este usuário? (S/N)");
+                string confirmacao;
+                do
+                {
+                    confirmacao = Normalizar(Console.ReadLine() ?? "");
+                    if (confirmacao != "s" && confirmacao != "n")
+                    {
+                        Console.WriteLine("Resposta inválida. Digite 'S' para sim ou 'N' para não.");
+                    }
+                } while (confirmacao != "s" && confirmacao != "n");
+                if (confirmacao == "s")
+                {
+                    usuarios.Remove(usuario);
+                    salvar(usuarios);
+                    Console.WriteLine("\nUsuário excluído com sucesso!");
+                    Environment.Exit(0);
+                }
+                break;
+            case "0":
+                return;
+            default:
+                Console.WriteLine("Opção inválida. Tente novamente.");
+                break;
+        }
     }
 }
