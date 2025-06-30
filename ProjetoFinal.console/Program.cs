@@ -8,17 +8,17 @@ Console.WriteLine("Bem-vindo ao jogo de captura de monstros!");
 const string arquivoUsuarios = "usuarios.json";
 List<Usuario> usuarios = CarregarUsuarios();
 
-string nomeCompleto = LerEntrada("Digite seu nome de usuário: ");
+string nomeCompleto = LerEntrada("\nDigite seu nome de usuário: ");
 Usuario usuario = BuscarOuCriarUsuario(nomeCompleto, usuarios, SalvarUsuarios);
 
 while (true)
 {
-    Console.WriteLine("\nMenu:");
+    Console.WriteLine("\nMenu:\n");
     Console.WriteLine("1. Novo Treinador");
     Console.WriteLine("2. Escolher Treinador");
-    Console.WriteLine("3. Sair");
+    Console.WriteLine("\n0. Sair");
 
-    string opcao = LerEntrada("Escolha uma opção: ");
+    string opcao = LerEntrada("\nEscolha uma opção: ");
 
     switch (opcao)
     {
@@ -26,9 +26,28 @@ while (true)
             NovoTreinador(usuario, usuarios, SalvarUsuarios);
             break;
         case "2":
-            ExibirTreinadores(usuario, usuarios);
+            EscolherTreinador(usuario, usuarios);
+            if (usuario.Treinadores.Count == 0)
+            {
+                Console.WriteLine("\nDeseja criar um novo treinador para começar sua jornada? (S/N)");
+
+                string resposta;
+                do
+                {
+                    resposta = Normalizar(Console.ReadLine() ?? "");
+                } while (resposta != "s" && resposta != "n");
+
+                if (resposta == "s")
+                {
+                    NovoTreinador(usuario, usuarios, SalvarUsuarios);
+                }
+                else
+                {
+                    Console.WriteLine("Voltando ao menu principal...");;
+                }
+            }
             break;
-        case "3":
+        case "0":
             SalvarUsuarios(usuarios);
             Console.WriteLine("\nSaindo...");
             return;
@@ -77,12 +96,12 @@ static Usuario BuscarOuCriarUsuario(string nomeCompleto, List<Usuario> usuarios,
     {
         usuario = new Usuario(nomeCompleto);
         usuarios.Add(usuario);
-        Console.WriteLine($"Usuário {usuario.NomeCompleto} criado!");
+        Console.WriteLine($"\nUsuário {usuario.NomeCompleto} criado!");
         salvar(usuarios);
     }
     else
     {
-        Console.WriteLine($"Bem-vindo de volta, {usuario.NomeCompleto}!");
+        Console.WriteLine($"\nBem-vindo de volta, {usuario.NomeCompleto}!");
     }
     return usuario;
 }
@@ -113,12 +132,12 @@ static void NovoTreinador(Usuario usuario, List<Usuario> usuarios, Action<List<U
         Treinador treinador = new(nomeTreinador, genero);
         usuario.AdicionarTreinador(treinador);
 
-        string artigoTipo1 = generoTreinador == "M" ? "" : "a"; // O artigo masculino permanece vazio
-        string artigoTipo2 = generoTreinador == "M" ? "o" : "a"; // Adiciona artigo "o" para masculino
+
+        string artigoTipo1 = Treinador.ArtigoTipo1(genero);
+        string artigoTipo2 = Treinador.ArtigoTipo2(genero);
         Console.WriteLine($"Treinador{artigoTipo1} {treinador.Nome} criad{artigoTipo2} com sucesso!");
 
         salvar(usuarios);
-        ExibirTreinadores(usuario, usuarios);
     }
     catch (Exception ex)
     {
@@ -126,39 +145,62 @@ static void NovoTreinador(Usuario usuario, List<Usuario> usuarios, Action<List<U
     }
 }
 
-static void ExibirTreinadores(Usuario usuario, List<Usuario> usuarios)
+static void EscolherTreinador(Usuario usuario, List<Usuario> usuarios)
 {
     if (usuario.Treinadores.Count == 0)
     {
         Console.WriteLine("\nVocê ainda não possui treinadores.");
-        Console.WriteLine("\nDeseja criar um novo treinador para começar sua jornada? (S/N)");
+        return;
+    }
 
-        string resposta;
-        do
+    while (true)
+    {
+        Console.WriteLine("Seus treinadores:");
+        foreach (var treinador in usuario.Treinadores)
         {
-            resposta = Normalizar(Console.ReadLine() ?? "");
-            if (resposta != "s" && resposta != "n")
-            {
-                Console.WriteLine("Insira uma resposta válida (S/N).");
-            }
-        } while (resposta != "s" && resposta != "n");
+            Console.WriteLine($"\n{treinador.Nome} | (Nível {treinador.Nivel})");
+        }
 
-        if (resposta == "s")
+        string nomeEscolhido = LerEntrada("\nDigite o nome do treinador com o qual deseja jogar (ou 'voltar' para retornar ao menu): ");
+        if (nomeEscolhido.Equals("voltar", StringComparison.OrdinalIgnoreCase))
+            break;
+
+        var treinadorSelecionado = usuario.Treinadores
+            .FirstOrDefault(t => t.Nome.Equals(nomeEscolhido, StringComparison.OrdinalIgnoreCase));
+
+        if (treinadorSelecionado != null)
         {
-            NovoTreinador(usuario, usuarios, SalvarUsuarios);
+            string artigoTipo1 = Treinador.ArtigoTipo1(treinadorSelecionado.Genero);
+            string artigoTipo2 = Treinador.ArtigoTipo2(treinadorSelecionado.Genero);
+            Console.WriteLine($"\nVocê selecionou {artigoTipo2} treinador{artigoTipo1} {treinadorSelecionado.Nome} | (Nível {treinadorSelecionado.Nivel}).");
+
+            Console.WriteLine("Digite 'voltar' para retornar ao menu inicial.");
+            string comando = LerEntrada("> ");
+            if (comando.Equals("voltar", StringComparison.OrdinalIgnoreCase))
+                break;
         }
         else
         {
-            Console.WriteLine("Voltando ao menu principal...");
-            return;
+            Console.WriteLine("\nTreinador não encontrado.");
         }
-        }
+    }
+}
+
+static void ExcluirTreinador(Usuario usuario, List<Usuario> usuarios, Action<List<Usuario>> salvar)
+{
+    string nomeTreinador = LerEntrada("\nDigite o nome do treinador que deseja excluir: ");
+    Treinador? treinador = usuario.Treinadores.FirstOrDefault(t => t.Nome.Equals(nomeTreinador, StringComparison.OrdinalIgnoreCase));
+
+    if (treinador != null)
+    {
+        usuario.Treinadores.Remove(treinador);
+        string artigoTipo1 = Treinador.ArtigoTipo1(treinador.Genero);
+        string artigoTipo2 = Treinador.ArtigoTipo2(treinador.Genero);
+        Console.WriteLine($"\nTreinador{artigoTipo1} {treinador.Nome} excluíd{artigoTipo2} com sucesso!");
+        salvar(usuarios);
+    }
     else
     {
-        Console.WriteLine("Seus treinadores: ");
-    }
-    foreach (var treinador in usuario.Treinadores)
-    {
-        Console.WriteLine($"\n{treinador.Nome} | (Nível {treinador.Nivel})");
+        Console.WriteLine("\nTreinador não encontrado.");
     }
 }

@@ -6,23 +6,23 @@ namespace ProjetoFinal.modelos
     public class Treinador
     {
         public string Nome { get; private set; }
-        public int Gênero { get; set; }
+        public int Genero { get; set; }
         public int Nivel { get; private set; }
         public int Experiencia { get; private set; }
         public List<Monstros> MonstrosCapturados { get; private set; }
 
         [JsonConstructor]
-        private Treinador(string nome, int gênero, int nivel, int experiencia)
+        private Treinador(string nome, int genero, int nivel, int experiencia)
         {
             Nome = nome;
-            Gênero = gênero;
+            Genero = genero;
             Nivel = nivel;
             Experiencia = experiencia;
             MonstrosCapturados = new List<Monstros>();
         }
 
-        public Treinador(string nome, int gênero)
-            : this(nome, gênero, 1, 0)
+        public Treinador(string nome, int genero)
+            : this(nome, genero, 1, 0)
         {
             if (string.IsNullOrWhiteSpace(nome))
             {
@@ -44,6 +44,15 @@ namespace ProjetoFinal.modelos
                 Nivel++;
                 Console.WriteLine($"{Nome} subiu para o nível {Nivel}!");
             }
+        }
+        public static string ArtigoTipo1(int genero)
+        {
+            return genero == 1 ? "" : "a"; // O artigo masculino permanece vazio
+        }
+
+        public static string ArtigoTipo2(int genero)
+        {
+            return genero == 1 ? "o" : "a"; // Adiciona artigo "o" para masculino
         }
     }
 }

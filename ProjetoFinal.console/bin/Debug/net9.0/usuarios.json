@@ -4,35 +4,35 @@
     "Treinadores": [
       {
         "Nome": "paes",
-        "Gênero": 1,
+        "Genero": 0,
         "Nivel": 1,
         "Experiencia": 0,
         "MonstrosCapturados": []
       },
       {
         "Nome": "lau",
-        "Gênero": 2,
+        "Genero": 0,
         "Nivel": 1,
         "Experiencia": 0,
         "MonstrosCapturados": []
       },
       {
         "Nome": "mongus",
-        "Gênero": 1,
+        "Genero": 0,
         "Nivel": 1,
         "Experiencia": 0,
         "MonstrosCapturados": []
       },
       {
         "Nome": "bda",
-        "Gênero": 2,
+        "Genero": 0,
         "Nivel": 1,
         "Experiencia": 0,
         "MonstrosCapturados": []
       },
       {
         "Nome": "asdasd",
-        "Gênero": 1,
+        "Genero": 0,
         "Nivel": 1,
         "Experiencia": 0,
         "MonstrosCapturados": []
@@ -41,39 +41,65 @@
     "TreinadoresReadOnly": [
       {
         "Nome": "paes",
-        "Gênero": 1,
+        "Genero": 0,
         "Nivel": 1,
         "Experiencia": 0,
         "MonstrosCapturados": []
       },
       {
         "Nome": "lau",
-        "Gênero": 2,
+        "Genero": 0,
         "Nivel": 1,
         "Experiencia": 0,
         "MonstrosCapturados": []
       },
       {
         "Nome": "mongus",
-        "Gênero": 1,
+        "Genero": 0,
         "Nivel": 1,
         "Experiencia": 0,
         "MonstrosCapturados": []
       },
       {
         "Nome": "bda",
-        "Gênero": 2,
+        "Genero": 0,
         "Nivel": 1,
         "Experiencia": 0,
         "MonstrosCapturados": []
       },
       {
         "Nome": "asdasd",
-        "Gênero": 1,
+        "Genero": 0,
         "Nivel": 1,
         "Experiencia": 0,
         "MonstrosCapturados": []
       }
     ]
+  },
+  {
+    "NomeCompleto": "laura",
+    "Treinadores": [
+      {
+        "Nome": "lau",
+        "Genero": 0,
+        "Nivel": 1,
+        "Experiencia": 0,
+        "MonstrosCapturados": []
+      }
+    ],
+    "TreinadoresReadOnly": [
+      {
+        "Nome": "lau",
+        "Genero": 0,
+        "Nivel": 1,
+        "Experiencia": 0,
+        "MonstrosCapturados": []
+      }
+    ]
+  },
+  {
+    "NomeCompleto": "teste",
+    "Treinadores": [],
+    "TreinadoresReadOnly": []
   }
 ]
