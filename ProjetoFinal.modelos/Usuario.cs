@@ -6,7 +6,7 @@ namespace ProjetoFinal.modelos;
 public class Usuario
 {
     public string NomeCompleto { get; set; }
-    
+
     public List<Treinador> Treinadores { get; set; } = new();
 
     [JsonIgnore]

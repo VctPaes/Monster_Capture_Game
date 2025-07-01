@@ -31,7 +31,7 @@ while (true)
             EscolherTreinador(usuario, usuarios);
             if (usuario.Treinadores.Count == 0)
             {
-                Console.WriteLine("\nDeseja criar um novo treinador para começar sua jornada? (S/N)");
+                Console.WriteLine("Deseja criar um novo treinador para começar sua jornada? (S/N)");
 
                 string resposta;
                 do
@@ -164,33 +164,29 @@ static void EscolherTreinador(Usuario usuario, List<Usuario> usuarios)
 
     while (true)
     {
-        Console.WriteLine("Seus treinadores:");
-        foreach (var treinador in usuario.Treinadores)
+        Console.WriteLine("\nSeus treinadores:\n");
+        for (int i = 0; i < usuario.Treinadores.Count; i++)
         {
-            Console.WriteLine($"\n{treinador.Nome} | (Nível {treinador.Nivel})");
+            var treinador = usuario.Treinadores[i];
+            Console.WriteLine($"{i + 1}. {treinador.Nome} | (Nível {treinador.Nivel})");
         }
+        Console.WriteLine("---------------------");
+        Console.WriteLine("0. Voltar");
 
-        string nomeEscolhido = LerEntrada("\nDigite o nome do treinador com o qual deseja jogar (ou 'voltar' para retornar ao menu): ");
-        if (nomeEscolhido.Equals("voltar", StringComparison.OrdinalIgnoreCase))
+        string entrada = LerEntrada("\nDigite o número do treinador que deseja selecionar: ");
+        if (entrada == "0")
             break;
 
-        var treinadorSelecionado = usuario.Treinadores
-            .FirstOrDefault(t => t.Nome.Equals(nomeEscolhido, StringComparison.OrdinalIgnoreCase));
-
-        if (treinadorSelecionado != null)
+        if (int.TryParse(entrada, out int indice) &&
+            indice >= 1 && indice <= usuario.Treinadores.Count)
         {
-            string artigoTipo1 = Treinador.ArtigoTipo1(treinadorSelecionado.Genero);
-            string artigoTipo2 = Treinador.ArtigoTipo2(treinadorSelecionado.Genero);
-            Console.WriteLine($"\nVocê selecionou {artigoTipo2} treinador{artigoTipo1} {treinadorSelecionado.Nome} | (Nível {treinadorSelecionado.Nivel}).");
-
-            Console.WriteLine("Digite 'voltar' para retornar ao menu inicial.");
-            string comando = LerEntrada("> ");
-            if (comando.Equals("voltar", StringComparison.OrdinalIgnoreCase))
-                break;
+            Treinador treinadorSelecionado = usuario.Treinadores[indice - 1];
+            JogarComTreinador(treinadorSelecionado, usuario, usuarios, SalvarUsuarios);
+            break;
         }
         else
         {
-            Console.WriteLine("\nTreinador não encontrado.");
+            Console.WriteLine("\nOpção inválida. Tente novamente.");
         }
     }
 }
@@ -205,6 +201,7 @@ static void ExcluirTreinador(Usuario usuario, List<Usuario> usuarios, Action<Lis
         usuario.Treinadores.Remove(treinador);
         string artigoTipo1 = Treinador.ArtigoTipo1(treinador.Genero);
         string artigoTipo2 = Treinador.ArtigoTipo2(treinador.Genero);
+        string artigoTipo3 = Treinador.ArtigoTipo3(treinador.Genero);
         Console.WriteLine($"\nTreinador{artigoTipo1} {treinador.Nome} excluíd{artigoTipo2} com sucesso!");
         salvar(usuarios);
     }
@@ -255,6 +252,89 @@ static void GerenciarUsuario(Usuario usuario, List<Usuario> usuarios, Action<Lis
                 break;
             case "0":
                 return;
+            default:
+                Console.WriteLine("Opção inválida. Tente novamente.");
+                break;
+        }
+    }
+}
+
+static void JogarComTreinador(Treinador treinador, Usuario usuario, List<Usuario> usuarios, Action<List<Usuario>> salvar)
+{
+    string artigoTipo1 = Treinador.ArtigoTipo1(treinador.Genero);
+    string artigoTipo2 = Treinador.ArtigoTipo2(treinador.Genero);
+    string artigoTipo3 = Treinador.ArtigoTipo3(treinador.Genero);
+    Console.WriteLine($"\nVocê está jogando com {artigoTipo2} treinador{artigoTipo1} {treinador.Nome} | (Nível {treinador.Nivel}).\n");
+
+    while (true)
+    {
+        Console.WriteLine("1. Procurar Monstro");
+        Console.WriteLine("2. Mochila");
+        Console.WriteLine("---------------------");
+        Console.WriteLine("0. Menu de Opções");
+
+        string opcao = LerEntrada("\nEscolha uma opção: ");
+
+        switch (opcao)
+        {
+            case "1":
+                Console.WriteLine("Procurando Monstro...\n");
+                // Função encontrar monstro (placeholder)
+                Console.WriteLine("\n**(Nome do Monstro)** encontrado! Pressione 'C' para capturá-lo\n");
+                break;
+            case "2":
+                Console.WriteLine("\nMochila Vazia...\n");
+                break;
+            case "0":
+                while (true)
+                {
+                    Console.WriteLine("\nMenu de Opções:\n");
+                    Console.WriteLine("1. Alterar Nome do Treinador");
+                    Console.WriteLine("2. Alterar Gênero do Treinador");
+                    Console.WriteLine("3. Excluir Treinador");
+                    Console.WriteLine("4. Voltar");
+                    Console.WriteLine("---------------------");
+                    Console.WriteLine("0. Voltar para o Menu Principal");
+
+                    string menuopcoes = LerEntrada("\nEscolha uma opção: ");
+
+                    switch (menuopcoes)
+                    {
+                        case "1":
+                            //altera nome
+                            return;
+                        case "2":
+                            //altera genero
+                            return;
+                        case "3":
+                            Console.WriteLine($"Tem certeza que deseja excluir est{artigoTipo3} Treinador{artigoTipo1}? (S/N)");
+                            string confirmacao;
+                            do
+                            {
+                                confirmacao = Normalizar(Console.ReadLine() ?? "");
+                                if (confirmacao != "s" && confirmacao != "n")
+                                {
+                                    Console.WriteLine("Resposta inválida. Digite 'S' para sim ou 'N' para não.");
+                                }
+                            } while (confirmacao != "s" && confirmacao != "n");
+                            if (confirmacao == "s")
+                            {
+                                Console.WriteLine($"\nRemovendo Treinador{artigoTipo1} {treinador.Nome}...\n");
+                                usuario.Treinadores.Remove(treinador);
+                                Console.WriteLine("\nTreinador excluído com sucesso!");
+                                salvar(usuarios);
+                                return;
+                            }
+                            break;
+                        default:
+                            Console.WriteLine("Opção inválida. Tente novamente.");
+                            break;
+                    }
+
+                    //switch (menuopcoes)
+                }
+
+                break;
             default:
                 Console.WriteLine("Opção inválida. Tente novamente.");
                 break;

@@ -1,10 +1,15 @@
 [
   {
     "NomeCompleto": "Victor",
+    "Treinadores": [],
+    "TreinadoresReadOnly": []
+  },
+  {
+    "NomeCompleto": "lau",
     "Treinadores": [
       {
-        "Nome": "Paes",
-        "Genero": 1,
+        "Nome": "Lau",
+        "Genero": 2,
         "Nivel": 1,
         "Experiencia": 0,
         "MonstrosCapturados": []
@@ -12,12 +17,17 @@
     ],
     "TreinadoresReadOnly": [
       {
-        "Nome": "Paes",
-        "Genero": 1,
+        "Nome": "Lau",
+        "Genero": 2,
         "Nivel": 1,
         "Experiencia": 0,
         "MonstrosCapturados": []
       }
     ]
+  },
+  {
+    "NomeCompleto": "Reis",
+    "Treinadores": [],
+    "TreinadoresReadOnly": []
   }
 ]

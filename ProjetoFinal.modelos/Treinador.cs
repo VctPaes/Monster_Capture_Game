@@ -54,5 +54,10 @@ namespace ProjetoFinal.modelos
         {
             return genero == 1 ? "o" : "a"; // Adiciona artigo "o" para masculino
         }
+
+        public static string ArtigoTipo3(int genero)
+        {
+            return genero == 1 ? "e" : "a"; // Adiciona artigo "e" para masculino
+        }
     }
 }
