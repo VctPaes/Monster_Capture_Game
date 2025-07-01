@@ -10,3 +10,15 @@ C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.modelos\obj\Debug\net9
 C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.modelos\obj\Debug\net9.0\refint\ProjetoFinal.modelos.dll
 C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.modelos\obj\Debug\net9.0\ProjetoFinal.modelos.pdb
 C:\Users\victo\Documents\GitHub\ProjetoFinal\ProjetoFinal.modelos\obj\Debug\net9.0\ref\ProjetoFinal.modelos.dll
+C:\Users\victo\OneDrive\Documentos\GitHub\ProjetoFinal\ProjetoFinal.modelos\bin\Debug\net9.0\ProjetoFinal.modelos.deps.json
+C:\Users\victo\OneDrive\Documentos\GitHub\ProjetoFinal\ProjetoFinal.modelos\bin\Debug\net9.0\ProjetoFinal.modelos.dll
+C:\Users\victo\OneDrive\Documentos\GitHub\ProjetoFinal\ProjetoFinal.modelos\bin\Debug\net9.0\ProjetoFinal.modelos.pdb
+C:\Users\victo\OneDrive\Documentos\GitHub\ProjetoFinal\ProjetoFinal.modelos\obj\Debug\net9.0\ProjetoFinal.modelos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\victo\OneDrive\Documentos\GitHub\ProjetoFinal\ProjetoFinal.modelos\obj\Debug\net9.0\ProjetoFinal.modelos.AssemblyInfoInputs.cache
+C:\Users\victo\OneDrive\Documentos\GitHub\ProjetoFinal\ProjetoFinal.modelos\obj\Debug\net9.0\ProjetoFinal.modelos.AssemblyInfo.cs
+C:\Users\victo\OneDrive\Documentos\GitHub\ProjetoFinal\ProjetoFinal.modelos\obj\Debug\net9.0\ProjetoFinal.modelos.csproj.CoreCompileInputs.cache
+C:\Users\victo\OneDrive\Documentos\GitHub\ProjetoFinal\ProjetoFinal.modelos\obj\Debug\net9.0\ProjetoFinal.modelos.sourcelink.json
+C:\Users\victo\OneDrive\Documentos\GitHub\ProjetoFinal\ProjetoFinal.modelos\obj\Debug\net9.0\ProjetoFinal.modelos.dll
+C:\Users\victo\OneDrive\Documentos\GitHub\ProjetoFinal\ProjetoFinal.modelos\obj\Debug\net9.0\refint\ProjetoFinal.modelos.dll
+C:\Users\victo\OneDrive\Documentos\GitHub\ProjetoFinal\ProjetoFinal.modelos\obj\Debug\net9.0\ProjetoFinal.modelos.pdb
+C:\Users\victo\OneDrive\Documentos\GitHub\ProjetoFinal\ProjetoFinal.modelos\obj\Debug\net9.0\ref\ProjetoFinal.modelos.dll

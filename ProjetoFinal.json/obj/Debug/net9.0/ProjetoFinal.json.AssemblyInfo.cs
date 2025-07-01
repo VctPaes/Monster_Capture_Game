@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjetoFinal.json")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa87ff9e993a1e012a79ae10fa36642a332a388c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+536ae945ac988d5ee9504f3aa1e1931a7ed8177f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjetoFinal.json")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjetoFinal.json")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

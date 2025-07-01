@@ -5,7 +5,7 @@ namespace ProjetoFinal.modelos
 {
     public class Treinador
     {
-        public string Nome { get; private set; }
+        public string Nome { get; set; }
         public int Genero { get; set; }
         public int Nivel { get; private set; }
         public int Experiencia { get; private set; }
