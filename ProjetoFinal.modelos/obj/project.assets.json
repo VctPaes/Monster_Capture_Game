@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\victo\\OneDrive\\Documentos\\GitHub\\ProjetoFinal\\ProjetoFinal.modelos\\ProjetoFinal.modelos.csproj",
+      "projectUniqueName": "C:\\Users\\victo\\Documents\\GitHub\\ProjetoFinal\\ProjetoFinal.modelos\\ProjetoFinal.modelos.csproj",
       "projectName": "ProjetoFinal.modelos",
-      "projectPath": "C:\\Users\\victo\\OneDrive\\Documentos\\GitHub\\ProjetoFinal\\ProjetoFinal.modelos\\ProjetoFinal.modelos.csproj",
+      "projectPath": "C:\\Users\\victo\\Documents\\GitHub\\ProjetoFinal\\ProjetoFinal.modelos\\ProjetoFinal.modelos.csproj",
       "packagesPath": "C:\\Users\\victo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\victo\\OneDrive\\Documentos\\GitHub\\ProjetoFinal\\ProjetoFinal.modelos\\obj\\",
+      "outputPath": "C:\\Users\\victo\\Documents\\GitHub\\ProjetoFinal\\ProjetoFinal.modelos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\victo\\AppData\\Roaming\\NuGet\\NuGet.Config"

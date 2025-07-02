@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q5LXy9jW4Yk=",
+  "dgSpecHash": "1oDFD+PQ/Vc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\victo\\OneDrive\\Documentos\\GitHub\\ProjetoFinal\\ProjetoFinal.console\\ProjetoFinal.console.csproj",
+  "projectFilePath": "C:\\Users\\victo\\Documents\\GitHub\\ProjetoFinal\\ProjetoFinal.console\\ProjetoFinal.console.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\victo\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],

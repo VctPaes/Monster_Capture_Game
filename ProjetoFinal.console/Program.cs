@@ -2,6 +2,8 @@
 using System.Globalization;
 using ProjetoFinal.modelos;
 using Newtonsoft.Json;
+using System.Diagnostics;
+using System.Threading;
 
 Console.WriteLine("Bem-vindo ao jogo de captura de monstros!");
 
@@ -203,7 +205,7 @@ static void GerenciarUsuario(Usuario usuario, List<Usuario> usuarios, Action<Lis
         Console.WriteLine("0. Voltar");
 
         string opcao = LerEntrada("\nEscolha uma opção: ");
-
+        
         switch (opcao)
         {
             case "1":
@@ -238,8 +240,45 @@ static void GerenciarUsuario(Usuario usuario, List<Usuario> usuarios, Action<Lis
 
 static void EncontrarMonstro()
 {
-    
-    Console.WriteLine("\n**(Nome do Monstro)** encontrado! Pressione 'C' para capturá-lo\n");
+    var monstros = Monstros.ListaDeMonstros();
+
+    Dictionary<Raridade, double> pesosPorRaridade = new()
+    {
+        { Raridade.Comum, 1.0 },
+        { Raridade.Incomum, 0.5 },
+        { Raridade.Raro, 0.2 },
+        { Raridade.Epico, 0.1 },
+        { Raridade.Lendario, 0.05 }
+    };
+
+    var pesos = monstros.Select(m => pesosPorRaridade[m.Raridade]).ToList();
+    double somaPesos = pesos.Sum();
+
+    var random = new Random();
+    double valor = random.NextDouble() * somaPesos;
+    double acumulado = 0;
+    for (int i = 0; i < monstros.Count; i++)
+    {
+        acumulado += pesos[i];
+        if (valor <= acumulado)
+        {
+            Stopwatch cronometro = new Stopwatch();
+            cronometro.Start();
+
+            string entrada = LerEntrada($"\n{monstros[i].Nome} | ({monstros[i].Raridade}) encontrado! Pressione 'C' para tentar capturá-lo  (5 Segundos)\n");
+            if (!string.IsNullOrEmpty(entrada) && entrada.Trim().Equals("C", StringComparison.OrdinalIgnoreCase) && cronometro.ElapsedMilliseconds < 5000)
+            {
+                Console.WriteLine("Você tentou capturar o monstro!");
+            }
+            else
+            {
+                Console.WriteLine("Você não pressionou 'C' a tempo. O monstro fugiu...");
+                return;
+            }
+            cronometro.Stop();
+            return;
+        }
+    }
 }
 
 static void JogarComTreinador(Treinador treinador, Usuario usuario, List<Usuario> usuarios, Action<List<Usuario>> salvar)
@@ -250,7 +289,7 @@ static void JogarComTreinador(Treinador treinador, Usuario usuario, List<Usuario
     while (true)
     {
     MenuJogo:
-        Console.WriteLine("1. Procurar Monstro");
+        Console.WriteLine("\n1. Procurar Monstro");
         Console.WriteLine("2. Mochila");
         Console.WriteLine("---------------------");
         Console.WriteLine("0. Menu de Opções");
@@ -261,8 +300,7 @@ static void JogarComTreinador(Treinador treinador, Usuario usuario, List<Usuario
         {
             case "1":
                 Console.WriteLine("Procurando Monstro...\n");
-                // Função encontrar monstro (placeholder)
-                Console.WriteLine("\n**(Nome do Monstro)** encontrado! Pressione 'C' para capturá-lo\n");
+                EncontrarMonstro();
                 break;
             case "2":
                 Console.WriteLine("\nMochila Vazia...\n");
@@ -271,9 +309,9 @@ static void JogarComTreinador(Treinador treinador, Usuario usuario, List<Usuario
                 while (true)
                 {
                     Console.WriteLine("\nMenu de Opções:\n");
-                    Console.WriteLine($"1. Alterar Nome d{artigoTipo1} Treinador{artigoTipo2}");
-                    Console.WriteLine($"2. Alterar Gênero d{artigoTipo1} Treinador{artigoTipo2}");
-                    Console.WriteLine($"3. Excluir Treinador{artigoTipo2}");
+                    Console.WriteLine($"1. Alterar Nome d{artigoTipo2} Treinador{artigoTipo1}");
+                    Console.WriteLine($"2. Alterar Gênero d{artigoTipo2} Treinador{artigoTipo1}");
+                    Console.WriteLine($"3. Excluir Treinador{artigoTipo1}");
                     Console.WriteLine("4. Voltar");
                     Console.WriteLine("---------------------");
                     Console.WriteLine("0. Voltar para o Menu Principal");
