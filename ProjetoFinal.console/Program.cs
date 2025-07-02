@@ -236,6 +236,12 @@ static void GerenciarUsuario(Usuario usuario, List<Usuario> usuarios, Action<Lis
     }
 }
 
+static void EncontrarMonstro()
+{
+    
+    Console.WriteLine("\n**(Nome do Monstro)** encontrado! Pressione 'C' para capturá-lo\n");
+}
+
 static void JogarComTreinador(Treinador treinador, Usuario usuario, List<Usuario> usuarios, Action<List<Usuario>> salvar)
 {
     ObterArtigo(treinador.Genero, out string artigoTipo1, out string artigoTipo2, out string artigoTipo3);
@@ -243,7 +249,7 @@ static void JogarComTreinador(Treinador treinador, Usuario usuario, List<Usuario
 
     while (true)
     {
-        MenuJogo:
+    MenuJogo:
         Console.WriteLine("1. Procurar Monstro");
         Console.WriteLine("2. Mochila");
         Console.WriteLine("---------------------");
@@ -300,7 +306,7 @@ static void JogarComTreinador(Treinador treinador, Usuario usuario, List<Usuario
                             {
                                 Console.WriteLine("Resposta inválida. Digite 'S' para sim ou 'N' para não.");
                                 return;
-                        }
+                            }
                             if (confirmacao == "S")
                             {
                                 Console.WriteLine($"Removendo Treinador{artigoTipo1} {treinador.Nome}...");
