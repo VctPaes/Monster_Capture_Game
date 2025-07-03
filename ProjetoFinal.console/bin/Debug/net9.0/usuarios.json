@@ -1,52 +1,8 @@
 [
   {
     "NomeCompleto": "Victor",
-    "Treinadores": [
-      {
-        "Nome": "paes",
-        "Genero": 1,
-        "Nivel": 1,
-        "Experiencia": 0,
-        "MonstrosCapturados": []
-      },
-      {
-        "Nome": "paes1",
-        "Genero": 1,
-        "Nivel": 1,
-        "Experiencia": 0,
-        "MonstrosCapturados": []
-      },
-      {
-        "Nome": "paes2",
-        "Genero": 1,
-        "Nivel": 1,
-        "Experiencia": 0,
-        "MonstrosCapturados": []
-      }
-    ],
-    "TreinadoresReadOnly": [
-      {
-        "Nome": "paes",
-        "Genero": 1,
-        "Nivel": 1,
-        "Experiencia": 0,
-        "MonstrosCapturados": []
-      },
-      {
-        "Nome": "paes1",
-        "Genero": 1,
-        "Nivel": 1,
-        "Experiencia": 0,
-        "MonstrosCapturados": []
-      },
-      {
-        "Nome": "paes2",
-        "Genero": 1,
-        "Nivel": 1,
-        "Experiencia": 0,
-        "MonstrosCapturados": []
-      }
-    ]
+    "Treinadores": [],
+    "TreinadoresReadOnly": []
   },
   {
     "NomeCompleto": "lau",

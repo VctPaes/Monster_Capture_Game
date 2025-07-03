@@ -247,13 +247,17 @@ static void CapturarMonstro(Treinador treinador, Monstros monstro)
     Random random = new Random();
     double sorteio = random.NextDouble();
 
-    Console.WriteLine($"\nTentando capturar {monstro.Nome} com {rede.Nome}...");
+    Console.WriteLine($"\nTentando capturar {monstro.Nome} com {rede.Nome}...\n");
 
     if (sorteio <= chanceCaptura)
     {
         Console.WriteLine($"Parabéns! Você capturou um {monstro.Nome}!");
         Console.WriteLine($"Pontos de Experiência ganhos: {monstro.PontosDeExperiencia}.");
+
+        treinador.Experiencia += monstro.PontosDeExperiencia;
         CalcularNivelTreinador(treinador);
+        ObterRede(treinador.Nivel);
+        
         treinador.MonstrosCapturados.Add(monstro);
     }
     else
@@ -277,7 +281,38 @@ static void CalcularNivelTreinador(Treinador treinador)
     if (treinador.Nivel > nivelInicial)
     {
         Console.WriteLine($"\n{treinador.Nome} agora está no Nível {treinador.Nivel}!");
+
+        if (treinador.Nivel >= 25)
+        {
+            Console.WriteLine($"{treinador.Nome} agora possui a Rede Perfeita!");
+        }
+        else if (treinador.Nivel >= 20)
+        {
+            Console.WriteLine($"{treinador.Nome} agora possui a Rede Mestra!");
+        }
+        else if (treinador.Nivel >= 15)
+        {
+            Console.WriteLine($"{treinador.Nome} agora possui a Rede Avançada!");
+        }
+        else if (treinador.Nivel >= 10)
+        {
+            Console.WriteLine($"{treinador.Nome} agora possui a Rede Básica!");
+        }
     }
+}
+
+static Rede ObterRede(int nivel)
+{
+    if (nivel >= 25)
+        return new Rede("Rede Perfeita", Raridade.Lendario, 100);
+    else if (nivel >= 20)
+        return new Rede("Rede Mestra", Raridade.Epico, 80);
+    else if (nivel >= 15)
+        return new Rede("Rede Avançada", Raridade.Raro, 50);
+    else if (nivel >= 10)
+        return new Rede("Rede Básica", Raridade.Comum, 30);
+    else
+        return new Rede("Rede Inicial", Raridade.Comum, 15);
 }
 
 static void EncontrarMonstro(Treinador treinador)
@@ -310,7 +345,6 @@ static void EncontrarMonstro(Treinador treinador)
             string entrada = LerEntrada($"\n{monstros[i].Nome} | ({monstros[i].Raridade}) encontrado! Pressione 'C' para tentar capturá-lo  (5 Segundos)\n");
             if (!string.IsNullOrEmpty(entrada) && entrada.Trim().Equals("C", StringComparison.OrdinalIgnoreCase) && cronometro.ElapsedMilliseconds < 5000)
             {
-                Console.WriteLine("Você tentou capturar o monstro!");
                 CapturarMonstro(treinador, monstros[i]);
             }
             else
@@ -321,6 +355,28 @@ static void EncontrarMonstro(Treinador treinador)
             cronometro.Stop();
             return;
         }
+    }
+}
+
+static void AbrirMochila(Treinador treinador)
+{
+    if (treinador.MonstrosCapturados.Count == 0)
+    {
+        Console.WriteLine("\nSua mochila está vazia. Nenhum monstro capturado ainda.");
+        return;
+    }
+
+    Console.WriteLine("\nMonstros capturados:");
+    var agrupados = treinador.MonstrosCapturados
+        .GroupBy(m => m.Nome)
+        .OrderBy(g => g.First().Codigo)
+        .Select(g => new { Nome = g.Key, Quantidade = g.Count(), Raridade = g.First().Raridade });
+
+    int i = 1;
+    foreach (var monstro in agrupados)
+    {
+        Console.WriteLine($"{monstro.Quantidade} x {monstro.Nome} | {monstro.Raridade}");
+        i++;
     }
 }
 
@@ -346,8 +402,7 @@ static void JogarComTreinador(Treinador treinador, Usuario usuario, List<Usuario
                 EncontrarMonstro(treinador);
                 break;
             case "2":
-                Console.WriteLine("\nMochila Vazia...\n");
-                // Implementar lógica da mochila aqui
+                AbrirMochila(treinador);
                 break;
             case "0":
                 while (true)
