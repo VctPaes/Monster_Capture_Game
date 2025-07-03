@@ -1,8 +1,24 @@
 [
   {
     "NomeCompleto": "Victor",
-    "Treinadores": [],
-    "TreinadoresReadOnly": []
+    "Treinadores": [
+      {
+        "Nome": "Paes",
+        "Genero": 1,
+        "Nivel": 1,
+        "Experiencia": 0,
+        "MonstrosCapturados": []
+      }
+    ],
+    "TreinadoresReadOnly": [
+      {
+        "Nome": "Paes",
+        "Genero": 1,
+        "Nivel": 1,
+        "Experiencia": 0,
+        "MonstrosCapturados": []
+      }
+    ]
   },
   {
     "NomeCompleto": "lau",
