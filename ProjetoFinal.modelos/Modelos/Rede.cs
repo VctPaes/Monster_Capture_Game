@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjetoFinal.modelos.Modelos;
+namespace ProjetoFinal.modelos;
 
 public class Rede
 {

@@ -7,9 +7,9 @@ namespace ProjetoFinal.modelos
     {
         public string Nome { get; set; }
         public int Genero { get; set; }
-        public int Nivel { get; private set; }
-        public int Experiencia { get; private set; }
-        public List<Monstros> MonstrosCapturados { get; private set; }
+        public int Nivel { get; set; }
+        public int Experiencia { get; set; }
+        public List<Monstros> MonstrosCapturados { get; set; }
 
         [JsonConstructor]
         private Treinador(string nome, int genero, int nivel, int experiencia)

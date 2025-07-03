@@ -205,7 +205,7 @@ static void GerenciarUsuario(Usuario usuario, List<Usuario> usuarios, Action<Lis
         Console.WriteLine("0. Voltar");
 
         string opcao = LerEntrada("\nEscolha uma opção: ");
-        
+
         switch (opcao)
         {
             case "1":
@@ -238,7 +238,49 @@ static void GerenciarUsuario(Usuario usuario, List<Usuario> usuarios, Action<Lis
     }
 }
 
-static void EncontrarMonstro()
+static void CapturarMonstro(Treinador treinador, Monstros monstro)
+{
+    Rede rede = new Rede("Rede Básica", Raridade.Comum, 20);
+
+    double chanceCaptura = (double)rede.Eficiencia / (rede.Eficiencia + monstro.DificuldadedeCaptura);
+
+    Random random = new Random();
+    double sorteio = random.NextDouble();
+
+    Console.WriteLine($"\nTentando capturar {monstro.Nome} com {rede.Nome}...");
+
+    if (sorteio <= chanceCaptura)
+    {
+        Console.WriteLine($"Parabéns! Você capturou um {monstro.Nome}!");
+        Console.WriteLine($"Pontos de Experiência ganhos: {monstro.PontosDeExperiencia}.");
+        CalcularNivelTreinador(treinador);
+        treinador.MonstrosCapturados.Add(monstro);
+    }
+    else
+    {
+        Console.WriteLine($"{monstro.Nome} escapou!");
+    }
+}
+
+static void CalcularNivelTreinador(Treinador treinador)
+{
+    int nivelInicial = treinador.Nivel;
+    double experienciaNecessaria = 0.8 * treinador.Nivel * treinador.Nivel * treinador.Nivel;
+
+    while (treinador.Experiencia >= experienciaNecessaria)
+    {
+        treinador.Experiencia -= (int)experienciaNecessaria;
+        treinador.Nivel++;
+        experienciaNecessaria = 0.8 * treinador.Nivel * treinador.Nivel * treinador.Nivel;
+    }
+
+    if (treinador.Nivel > nivelInicial)
+    {
+        Console.WriteLine($"\n{treinador.Nome} agora está no Nível {treinador.Nivel}!");
+    }
+}
+
+static void EncontrarMonstro(Treinador treinador)
 {
     var monstros = Monstros.ListaDeMonstros();
 
@@ -269,6 +311,7 @@ static void EncontrarMonstro()
             if (!string.IsNullOrEmpty(entrada) && entrada.Trim().Equals("C", StringComparison.OrdinalIgnoreCase) && cronometro.ElapsedMilliseconds < 5000)
             {
                 Console.WriteLine("Você tentou capturar o monstro!");
+                CapturarMonstro(treinador, monstros[i]);
             }
             else
             {
@@ -300,10 +343,11 @@ static void JogarComTreinador(Treinador treinador, Usuario usuario, List<Usuario
         {
             case "1":
                 Console.WriteLine("Procurando Monstro...\n");
-                EncontrarMonstro();
+                EncontrarMonstro(treinador);
                 break;
             case "2":
                 Console.WriteLine("\nMochila Vazia...\n");
+                // Implementar lógica da mochila aqui
                 break;
             case "0":
                 while (true)
