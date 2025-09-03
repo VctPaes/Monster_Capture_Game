@@ -259,7 +259,11 @@ static void CapturarMonstro(Treinador treinador, Monstros monstro)
 {
     Rede rede = ObterRede(treinador.Nivel);
 
-    double chanceCaptura = (double)rede.Eficiencia / (rede.Eficiencia + monstro.DificuldadedeCaptura);
+    double fatorCaptura = monstro.DificuldadedeCaptura * rede.Eficiencia;
+
+    const double limiteCaptura = 200.0;
+
+    double chanceCaptura = fatorCaptura / (fatorCaptura + limiteCaptura);
 
     Random random = new Random();
     double sorteio = random.NextDouble();
@@ -294,23 +298,26 @@ static void CalcularNivelTreinador(Treinador treinador)
         experienciaNecessaria = 0.8 * treinador.Nivel * treinador.Nivel * treinador.Nivel;
     }
 
+    Rede redeAtual = ObterRede(treinador.Nivel);
+    treinador.Rede = redeAtual.Numeracao;
+
     if (treinador.Nivel > nivelInicial)
     {
         Console.WriteLine($"\n{treinador.Nome} agora está no Nível {treinador.Nivel}!");
 
-        if (treinador.Nivel >= 25)
+        if (treinador.Nivel == 20)
         {
             Console.WriteLine($"{treinador.Nome} agora possui a Rede Perfeita!");
         }
-        else if (treinador.Nivel >= 20)
+        else if (treinador.Nivel == 15)
         {
             Console.WriteLine($"{treinador.Nome} agora possui a Rede Mestra!");
         }
-        else if (treinador.Nivel >= 15)
+        else if (treinador.Nivel == 10)
         {
             Console.WriteLine($"{treinador.Nome} agora possui a Rede Avançada!");
         }
-        else if (treinador.Nivel >= 10)
+        else if (treinador.Nivel == 5)
         {
             Console.WriteLine($"{treinador.Nome} agora possui a Rede Básica!");
         }
@@ -319,16 +326,17 @@ static void CalcularNivelTreinador(Treinador treinador)
 
 static Rede ObterRede(int nivel)
 {
-    if (nivel >= 25)
-        return new Rede("Rede Perfeita", Raridade.Lendario, 100);
-    else if (nivel >= 20)
-        return new Rede("Rede Mestra", Raridade.Epico, 80);
+    var redes = Rede.ListaDeRedes();
+    if (nivel >= 20)
+        return redes.First(redeAtual => redeAtual.Numeracao == 4);
     else if (nivel >= 15)
-        return new Rede("Rede Avançada", Raridade.Raro, 50);
+        return redes.First(redeAtual => redeAtual.Numeracao == 3);
     else if (nivel >= 10)
-        return new Rede("Rede Básica", Raridade.Comum, 30);
+        return redes.First(redeAtual => redeAtual.Numeracao == 2);
+    else if (nivel >= 5)
+        return redes.First(redeAtual => redeAtual.Numeracao == 1);
     else
-        return new Rede("Rede Furada", Raridade.Comum, 15);
+        return redes.First(redeAtual => redeAtual.Numeracao == 0);
 }
 
 static void EncontrarMonstro(Treinador treinador)

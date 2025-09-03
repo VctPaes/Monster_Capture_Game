@@ -7,6 +7,7 @@
         "Genero": 1,
         "Nivel": 14,
         "Experiencia": 1481,
+        "Rede": 0,
         "MonstrosCapturados": [
           {
             "Codigo": 4,
@@ -638,6 +639,7 @@
         "Genero": 1,
         "Nivel": 14,
         "Experiencia": 1481,
+        "Rede": 0,
         "MonstrosCapturados": [
           {
             "Codigo": 4,
@@ -1258,6 +1260,697 @@
             "Tipo1": "Agua",
             "Tipo2": "Agua",
             "DificuldadedeCaptura": 10,
+            "PontosDeExperiencia": 50
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "NomeCompleto": "teste",
+    "Treinadores": [
+      {
+        "Nome": "teste",
+        "Genero": 1,
+        "Nivel": 12,
+        "Experiencia": 20,
+        "Rede": 2,
+        "MonstrosCapturados": [
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 5,
+            "Nome": "Fogarto",
+            "Raridade": 2,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 5,
+            "Nome": "Fogarto",
+            "Raridade": 2,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 9,
+            "Nome": "Jabutanque",
+            "Raridade": 3,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 60,
+            "PontosDeExperiencia": 500
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 5,
+            "Nome": "Fogarto",
+            "Raridade": 2,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 5,
+            "Nome": "Fogarto",
+            "Raridade": 2,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 8,
+            "Nome": "Tancaruga",
+            "Raridade": 2,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 2,
+            "Nome": "Herassauro",
+            "Raridade": 2,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 2,
+            "Nome": "Herassauro",
+            "Raridade": 2,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 5,
+            "Nome": "Fogarto",
+            "Raridade": 2,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          }
+        ]
+      }
+    ],
+    "TreinadoresReadOnly": [
+      {
+        "Nome": "teste",
+        "Genero": 1,
+        "Nivel": 12,
+        "Experiencia": 20,
+        "Rede": 2,
+        "MonstrosCapturados": [
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 5,
+            "Nome": "Fogarto",
+            "Raridade": 2,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 5,
+            "Nome": "Fogarto",
+            "Raridade": 2,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 9,
+            "Nome": "Jabutanque",
+            "Raridade": 3,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 60,
+            "PontosDeExperiencia": 500
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 5,
+            "Nome": "Fogarto",
+            "Raridade": 2,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 5,
+            "Nome": "Fogarto",
+            "Raridade": 2,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 8,
+            "Nome": "Tancaruga",
+            "Raridade": 2,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 2,
+            "Nome": "Herassauro",
+            "Raridade": 2,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 2,
+            "Nome": "Herassauro",
+            "Raridade": 2,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 5,
+            "Nome": "Fogarto",
+            "Raridade": 2,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 100,
+            "PontosDeExperiencia": 200
+          },
+          {
+            "Codigo": 1,
+            "Nome": "Bulbossauro",
+            "Raridade": 1,
+            "Tipo1": "Planta",
+            "Tipo2": "Veneno",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 4,
+            "Nome": "Brasagarto",
+            "Raridade": 1,
+            "Tipo1": "Fogo",
+            "Tipo2": "Fogo",
+            "DificuldadedeCaptura": 200,
+            "PontosDeExperiencia": 50
+          },
+          {
+            "Codigo": 7,
+            "Nome": "Jataruga",
+            "Raridade": 1,
+            "Tipo1": "Agua",
+            "Tipo2": "Agua",
+            "DificuldadedeCaptura": 200,
             "PontosDeExperiencia": 50
           }
         ]

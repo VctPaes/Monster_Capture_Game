@@ -9,20 +9,22 @@ namespace ProjetoFinal.modelos
         public int Genero { get; set; }
         public int Nivel { get; set; }
         public int Experiencia { get; set; }
+        public int Rede { get; set; }
         public List<Monstros> MonstrosCapturados { get; set; }
 
         [JsonConstructor]
-        private Treinador(string nome, int genero, int nivel, int experiencia)
+        private Treinador(string nome, int genero, int nivel, int experiencia, int rede)
         {
             Nome = nome;
             Genero = genero;
             Nivel = nivel;
             Experiencia = experiencia;
             MonstrosCapturados = new List<Monstros>();
+            Rede = rede;
         }
 
         public Treinador(string nome, int genero)
-            : this(nome, genero, 1, 0)
+            : this(nome, genero, 1, 0, 0)
         {
             if (string.IsNullOrWhiteSpace(nome))
             {
