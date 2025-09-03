@@ -124,6 +124,24 @@ static string LerEntrada(string mensagem)
     return entrada;
 }
 
+static string? LerTeclaComTimeout(string mensagem, int timeoutMs)
+{
+    Console.Write(mensagem);
+
+    DateTime inicio = DateTime.Now;
+    while ((DateTime.Now - inicio).TotalMilliseconds < timeoutMs)
+    {
+        if (Console.KeyAvailable)
+        {
+            var tecla = Console.ReadKey(true);
+            return tecla.KeyChar.ToString();
+        }
+        Thread.Sleep(50);
+    }
+
+    return null;
+}
+
 static void NovoTreinador(Usuario usuario, List<Usuario> usuarios, Action<List<Usuario>> salvar)
 {
     string nomeTreinador = LerEntrada("Digite o nome do novo treinador: ");
@@ -203,7 +221,6 @@ static void GerenciarUsuario(Usuario usuario, List<Usuario> usuarios, Action<Lis
         Console.WriteLine("2. Excluir Usuário");
         Console.WriteLine("---------------------");
         Console.WriteLine("0. Voltar");
-
         string opcao = LerEntrada("\nEscolha uma opção: ");
 
         switch (opcao)
@@ -240,7 +257,7 @@ static void GerenciarUsuario(Usuario usuario, List<Usuario> usuarios, Action<Lis
 
 static void CapturarMonstro(Treinador treinador, Monstros monstro)
 {
-    Rede rede = new Rede("Rede Básica", Raridade.Comum, 20);
+    Rede rede = ObterRede(treinador.Nivel);
 
     double chanceCaptura = (double)rede.Eficiencia / (rede.Eficiencia + monstro.DificuldadedeCaptura);
 
@@ -256,7 +273,6 @@ static void CapturarMonstro(Treinador treinador, Monstros monstro)
 
         treinador.Experiencia += monstro.PontosDeExperiencia;
         CalcularNivelTreinador(treinador);
-        ObterRede(treinador.Nivel);
         
         treinador.MonstrosCapturados.Add(monstro);
     }
@@ -312,7 +328,7 @@ static Rede ObterRede(int nivel)
     else if (nivel >= 10)
         return new Rede("Rede Básica", Raridade.Comum, 30);
     else
-        return new Rede("Rede Inicial", Raridade.Comum, 15);
+        return new Rede("Rede Furada", Raridade.Comum, 15);
 }
 
 static void EncontrarMonstro(Treinador treinador)
@@ -339,20 +355,15 @@ static void EncontrarMonstro(Treinador treinador)
         acumulado += pesos[i];
         if (valor <= acumulado)
         {
-            Stopwatch cronometro = new Stopwatch();
-            cronometro.Start();
-
-            string entrada = LerEntrada($"\n{monstros[i].Nome} | ({monstros[i].Raridade}) encontrado! Pressione 'C' para tentar capturá-lo  (5 Segundos)\n");
-            if (!string.IsNullOrEmpty(entrada) && entrada.Trim().Equals("C", StringComparison.OrdinalIgnoreCase) && cronometro.ElapsedMilliseconds < 5000)
+            string? entrada = LerTeclaComTimeout($"\n{monstros[i].Nome} | ({monstros[i].Raridade}) encontrado! Pressione 'C' para tentar capturá-lo  (5 Segundos)\n", 5000);
+            if (!string.IsNullOrEmpty(entrada) && entrada.Trim().Equals("C", StringComparison.OrdinalIgnoreCase))
             {
                 CapturarMonstro(treinador, monstros[i]);
             }
             else
             {
-                Console.WriteLine("Você não pressionou 'C' a tempo. O monstro fugiu...");
-                return;
+                Console.WriteLine("\nVocê não pressionou 'C' a tempo. O monstro fugiu...");
             }
-            cronometro.Stop();
             return;
         }
     }
