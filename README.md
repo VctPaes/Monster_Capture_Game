@@ -1,4 +1,4 @@
-#  Monster Capture Game
+#  Jogo de Captura de Monstros
 
 Este repositório apresenta um jogo simples, programado em **C#**, de captura de montros através de interações no terminal. Ele foi desenvolvido como projeto final da disciplina **Programação Orientada a Objetos**, apresentando conceitos de **POO** apresentados durante o período letivo.
 
